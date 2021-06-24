@@ -1,0 +1,124 @@
+body {
+    background: linear-gradient(#dbee9e, #f3f6e7);
+    color:rgb(66, 82, 11);
+}
+
+#motto {
+    /* text-align: right; */
+    color: #090;
+    margin: 0.1em 0 0.1em 0;
+    font-size: 20px;
+}
+
+
+#top-menu-bar {
+    text-align: center;
+    background-color: #4e5a22;
+    color:#fff;
+    margin: 0;
+    padding: 4px 0 4px 0;
+}
+
+#top-menu-bar li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+#top-menu-bar a {
+    text-decoration: none;
+    padding: 3px 15px 3px 15px;
+    color: #fff;
+    margin: 0;
+    transition: color 0.3s, background 0.3s;
+}
+
+#top-menu-bar a:visited {
+    color: #fff;
+}
+
+#top-menu-bar a:hover {
+    color: rgb(78, 90, 34);
+    background: #fff;
+}
+
+
+.mainbox {
+    background-color: #f5ffca;
+    border: #e0dfdc 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.mainbox h3 {
+    margin: 0 0 8px 0;
+}
+
+.mainbox ul {
+    margin: 0 0 8px 0;
+    padding-left: 20px;
+}
+
+.favourite {
+    color: aquamarine;
+    font-weight: bold;
+    font-style: italic;
+    
+}
+
+
+td {
+    padding: 3px 10px;
+    background-color: rgb(242, 248, 221);
+}
+
+#topheader {
+    display: flex;
+    flex-direction: row;
+}
+
+#mypic {
+    border: #f5ffca 0.3em solid;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    margin: 0.2em 0.5em 0.2em 0.5em;
+}
+
+h2 {
+    margin: 0.1em 0 0.1em 0;
+    font-size: 30px;
+}
+
+#headertext {
+    display: flex;
+    flex-direction: column;
+    padding: 1.2em 0 1.2em 0;
+}
+
+footer {
+    text-align: center;
+    background-color: #4e5a22;
+    color:#fff;
+    margin: 0;
+    padding: 0;
+}
+
+footer p {
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 4px 0 4px 0;
+}
+
+footer p a {
+    text-decoration: none;
+    color: white;
+}
+
+footer p a:hover{
+    color: rgb(177, 177, 33);
+}
