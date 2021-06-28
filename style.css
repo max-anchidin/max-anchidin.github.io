@@ -16,11 +16,11 @@ body {
     background-color: #4e5a22;
     color:#fff;
     margin: 0;
-    padding: 4px 0 4px 0;
+    padding: 0;
 }
 
 #top-menu-bar li {
-    display: inline;
+    display: inline-block;
     margin: 0;
     padding: 0;
     color: #fff;
@@ -28,9 +28,10 @@ body {
 
 #top-menu-bar a {
     text-decoration: none;
-    padding: 3px 15px 3px 15px;
+    display: inline-block;
+    padding: 4px 15px 4px 15px;
     color: #fff;
-    margin: 0;
+    margin: 1px;
     transition: color 0.3s, background 0.3s;
 }
 
@@ -43,6 +44,10 @@ body {
     background: #fff;
 }
 
+#top-menu-bar a:active {
+    color: rgb(78, 90, 34);
+    background: rgb(219, 236, 183);
+}
 
 .mainbox {
     background-color: #f5ffca;

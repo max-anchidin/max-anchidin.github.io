@@ -8,34 +8,31 @@ function showPage(id) {
     document.getElementById(id).style.display = 'block';
 }
 
-
-function showHome() {
-    hidePage('skills');
+function hideAllPages() {
+    hidePage('home');
     hidePage('projects');
     hidePage('languages');
+    hidePage('skills');
+}
+
+
+function showHome() {
+    hideAllPages();
     showPage('home');
 }
 
 function showSkills() {
-    hidePage('home');
-    hidePage('projects');
-    hidePage('languages');
+    hideAllPages()
     showPage('skills');
 }
 
 function showProjects() {
-    hidePage('home');
-    hidePage('skills');
-    hidePage('languages');
+    hideAllPages()
     showPage('projects');
 }
 
 function showLanguages() {
-    hidePage('home');
-    hidePage('skills');
-    hidePage('projects');
+    hideAllPages()
     showPage('languages');
 }
-
-
 
