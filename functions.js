@@ -1,24 +1,18 @@
 function hidePage(id) {
-    console.info('hide page', id);
     document.getElementById(id).style.display = 'none';
 }
 
 function showPage(id) {
-    console.info('show page', id);
     document.getElementById(id).style.display = 'block';
 }
 
 function hideAllPages() {
-    var pageIds = [
-        'home', 'skills', 'projects', 'languages'
-    ];
+    var pages = Array.from(document.getElementsByClassName('mainbox'));
 
-    pageIds.forEach(function (pageId) {
-        hidePage(pageId);
+    pages.forEach(function (page) {
+        hidePage(page.id);
     });
-
 }
-
 
 function showHome() {
     hideAllPages();
