@@ -31,14 +31,15 @@ body {
     flex-direction: column;
 }
 
-header, body > section {
+/* header, body > section {
     flex: 1;
-}
+} */
 
 #content {
-    flex: 100;
     display: flex;
+    flex: 1;
     flex-direction: row;
+    align-items: flex-start;
     padding-top: 10px;
 }
 
