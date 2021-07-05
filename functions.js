@@ -1,3 +1,18 @@
+function highlight(el) {
+    //var oldBorderColor = el.style.borderColor;
+    //console.warn('oldBorderColor %o', oldBorderColor)
+    el.style.borderColor = '#00df00';
+    setTimeout(function () {
+        el.style.borderColor = '#55df44';
+    }, 100);
+    setTimeout(function () {
+        el.style.borderColor = '#99df88';
+    }, 200);
+    setTimeout(function () {
+        el.style.borderColor = '';
+    }, 300);
+}
+
 function hide(id) {
     document.getElementById(id).style.display = 'none';
 }
@@ -20,3 +35,11 @@ function showPage(id) {
 }
 
 show('skills');
+
+document.querySelector('#top-menu-bar').addEventListener('click', function (e) {
+    if (e.target.matches('a')) {
+        var id = e.target.getAttribute('data-page');
+        showPage(id);
+        highlight(e.target);
+    }
+})
