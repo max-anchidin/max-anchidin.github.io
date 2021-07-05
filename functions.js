@@ -57,17 +57,19 @@ document.querySelector('#top-menu-bar').addEventListener('click', function (e) {
 })
 
 var skills = [
-    { name: 'html', favourite: "y" },
-    { name: 'css' },
-    { name: 'js', favourite: "y" }
+    { name: 'html', favourite: "y", endorsements: 7 },
+    { name: 'css', endorsements: 10 },
+    { name: 'js', favourite: "y", endorsements: 5 }
 ];
 
 var skillsHtml = skills.map(function (skill) {
-    console.info(skill.name, skill.favourite);
-    if (skill.favourite) {
-        return `<li class='favourite'>${skill.name}</li>`;
-    }
-    return `<li>${skill.name}</li>`;
+    console.info(skill.name, skill.favourite, skill.endorsements);
+
+    var favourite = skill.favourite ? 'class="favourite"' : '';
+    var endorsements = skill.endorsements > 5 ? `<span>${skill.endorsements}</span>` : '';
+    console.warn('f', favourite, endorsements);
+    return `<li ${favourite}>${skill.name} ${endorsements}</li>`;
+
 }).join('');
 
 document.querySelector('#skills ul').innerHTML = skillsHtml;

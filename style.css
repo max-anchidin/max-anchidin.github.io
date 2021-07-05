@@ -72,9 +72,20 @@ body {
     color: aquamarine;
     font-weight: bold;
     font-style: italic;
-    
 }
 
+#skills li span {
+    font-weight: normal;
+    color: white;
+    font-style: normal;
+    font-size: 0.8em;
+    background-color: rgb(78, 90, 34);
+    border-radius: 50%;
+    display: inline-block;
+    padding: 1px 5px;
+    min-width: 10px;
+    text-align: center;
+}
 
 td {
     padding: 3px 10px;
