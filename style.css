@@ -39,7 +39,8 @@ body {
     color: #fff;
 }
 
-#top-menu-bar a:hover {
+#top-menu-bar a:hover, 
+#top-menu-bar a.active {
     color: rgb(78, 90, 34);
     background: #fff;
 }

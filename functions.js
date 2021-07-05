@@ -18,7 +18,19 @@ function hide(id) {
 }
 
 function show(id) {
-    document.getElementById(id).style.display = 'block';
+    var page = document.getElementById(id);
+    if (page) {
+        page.style.display = 'block';
+        highlight(page);
+    } else {
+        console.warn("pagina cu id-ul %o nu exista", id);
+    }
+    var oldLink = document.querySelector("a[data-page].active");
+    if (oldLink) {
+        oldLink.classList.remove("active");
+    }
+    var link = document.querySelector(`a[data-page=${id}]`);
+    link.classList.add("active");
 }
 
 function hideAllPages() {
