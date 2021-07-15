@@ -62,14 +62,15 @@ var skills = [
     { name: 'js', favourite: "y", endorsements: 5 }
 ];
 
-var skillsHtml = skills.map(function (skill) {
-    console.info(skill.name, skill.favourite, skill.endorsements);
+function showSkills(skills) {
+    var skillsHtml = skills.map(function (skill) {
+        var favourite = skill.favourite ? 'class="favourite"' : '';
+        var endorsements = skill.endorsements > 5 ? `<span>${skill.endorsements}</span>` : '';
+        return `<li ${favourite}>${skill.name} ${endorsements}</li>`;
+    }).join('');
 
-    var favourite = skill.favourite ? 'class="favourite"' : '';
-    var endorsements = skill.endorsements > 5 ? `<span>${skill.endorsements}</span>` : '';
-    console.warn('f', favourite, endorsements);
-    return `<li ${favourite}>${skill.name} ${endorsements}</li>`;
+    document.querySelector('#skills ul').innerHTML = skillsHtml;
+}
 
-}).join('');
+showSkills(skills);
 
-document.querySelector('#skills ul').innerHTML = skillsHtml;
