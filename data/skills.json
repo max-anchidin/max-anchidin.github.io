@@ -1,0 +1,16 @@
+[
+    {
+        "name": "html",
+        "favourite": "y",
+        "endorsements": 16
+    },
+    {
+        "name": "css",
+        "endorsements": 10
+    },
+    {
+        "name": "js",
+        "favourite": "y",
+        "endorsements": 5
+    }
+]

@@ -56,11 +56,7 @@ document.querySelector('#top-menu-bar').addEventListener('click', function (e) {
     }
 })
 
-var skills = [
-    { name: 'html', favourite: "y", endorsements: 7 },
-    { name: 'css', endorsements: 10 },
-    { name: 'js', favourite: "y", endorsements: 5 }
-];
+var skills = [];
 
 function showSkills(skills) {
     var skillsHtml = skills.map(function (skill) {
@@ -72,5 +68,10 @@ function showSkills(skills) {
     document.querySelector('#skills ul').innerHTML = skillsHtml;
 }
 
-showSkills(skills);
 
+fetch('data/skills.json').then(function (r) {
+    return r.json();
+}).then(function (skills) {
+    window.skills = skills;
+    showSkills(skills);
+});
