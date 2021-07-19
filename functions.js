@@ -36,7 +36,7 @@ function show(id) {
 function hideAllPages() {
     const pages = Array.from(document.getElementsByClassName('mainbox'));
 
-    pages.forEach((page) => {
+    pages.forEach(page => {
         hide(page.id);
     });
 }
@@ -48,7 +48,7 @@ function showPage(id) {
 
 show('skills');
 
-document.querySelector('#top-menu-bar').addEventListener('click', (e) => {
+document.querySelector('#top-menu-bar').addEventListener('click', e => {
     if (e.target.matches('a')) {
         const id = e.target.getAttribute('data-page');
         showPage(id);
@@ -59,7 +59,7 @@ document.querySelector('#top-menu-bar').addEventListener('click', (e) => {
 window.skills = [];
 
 function showSkills(skills) {
-    const skillsHtml = skills.map((skill) => {
+    const skillsHtml = skills.map(skill => {
         const favourite = skill.favourite ? 'class="favourite"' : '';
         const endorsements = skill.endorsements > 5 ? `<span>${skill.endorsements}</span>` : '';
         return `<li ${favourite}>${skill.name} ${endorsements}</li>`;
@@ -84,9 +84,9 @@ function sortSkillsByEndorsements(a, b) {
     return b.endorsements - a.endorsements;
 }
 
-fetch('data/skills.json').then((r) => {
+fetch('data/skills.json').then(r => {
     return r.json();
-}).then((skills) => {
+}).then(skills => {
     skills.sort(sortSkillsByName);
     window.skills = skills;
     showSkills(skills);
