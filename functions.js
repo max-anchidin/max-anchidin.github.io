@@ -2,13 +2,13 @@ function highlight(el) {
     //var oldBorderColor = el.style.borderColor;
     //console.warn('oldBorderColor %o', oldBorderColor)
     el.style.borderColor = '#00df00';
-    setTimeout(function () {
+    setTimeout(() => {
         el.style.borderColor = '#55df44';
     }, 100);
-    setTimeout(function () {
+    setTimeout(() => {
         el.style.borderColor = '#99df88';
     }, 200);
-    setTimeout(function () {
+    setTimeout(() => {
         el.style.borderColor = '';
     }, 300);
 }
@@ -36,7 +36,7 @@ function show(id) {
 function hideAllPages() {
     const pages = Array.from(document.getElementsByClassName('mainbox'));
 
-    pages.forEach(function (page) {
+    pages.forEach((page) => {
         hide(page.id);
     });
 }
@@ -48,7 +48,7 @@ function showPage(id) {
 
 show('skills');
 
-document.querySelector('#top-menu-bar').addEventListener('click', function (e) {
+document.querySelector('#top-menu-bar').addEventListener('click', (e) => {
     if (e.target.matches('a')) {
         const id = e.target.getAttribute('data-page');
         showPage(id);
@@ -59,7 +59,7 @@ document.querySelector('#top-menu-bar').addEventListener('click', function (e) {
 window.skills = [];
 
 function showSkills(skills) {
-    const skillsHtml = skills.map(function (skill) {
+    const skillsHtml = skills.map((skill) => {
         const favourite = skill.favourite ? 'class="favourite"' : '';
         const endorsements = skill.endorsements > 5 ? `<span>${skill.endorsements}</span>` : '';
         return `<li ${favourite}>${skill.name} ${endorsements}</li>`;
@@ -84,9 +84,9 @@ function sortSkillsByEndorsements(a, b) {
     return b.endorsements - a.endorsements;
 }
 
-fetch('data/skills.json').then(function (r) {
+fetch('data/skills.json').then((r) => {
     return r.json();
-}).then(function (skills) {
+}).then((skills) => {
     skills.sort(sortSkillsByName);
     window.skills = skills;
     showSkills(skills);
