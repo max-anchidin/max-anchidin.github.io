@@ -36,9 +36,7 @@ function show(id) {
 function hideAllPages() {
     const pages = Array.from(document.getElementsByClassName('mainbox'));
 
-    pages.forEach(page => {
-        hide(page.id);
-    });
+    pages.forEach(page => hide(page.id));
 }
 
 function showPage(id) {
@@ -84,10 +82,10 @@ function sortSkillsByEndorsements(a, b) {
     return b.endorsements - a.endorsements;
 }
 
-fetch('data/skills.json').then(r => {
-    return r.json();
-}).then(skills => {
-    skills.sort(sortSkillsByName);
-    window.skills = skills;
-    showSkills(skills);
-});
+fetch('data/skills.json')
+    .then(response => response.json())
+    .then(skills => {
+        skills.sort(sortSkillsByName);
+        window.skills = skills;
+        showSkills(skills);
+    });
